@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaft Collar Types - shaft-collar.com</title>
+    <style>
+        /* ======== 基础重置 ======== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.7;
+            background: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ======== 导航 ======== */
+        .navbar {
+            background: #1a3a5c;
+            color: #fff;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #2a5a8c;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .logo span {
+            color: #6ab0f7;
+        }
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            font-size: 15px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            text-decoration: none;
+            border-bottom-color: #6ab0f7;
+        }
+        .nav-links .btn-nav {
+            background: #2a7de1;
+            padding: 6px 22px;
+            border-radius: 20px;
+            border-bottom: none;
+            font-weight: 500;
+        }
+        .nav-links .btn-nav:hover {
+            background: #4a9df1;
+            border-bottom: none;
+        }
+        .nav-links .active {
+            color: #fff;
+            border-bottom-color: #6ab0f7;
+        }
+
+        /* ======== 页面横幅 ======== */
+        .page-banner {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://i.imgs.ovh/2026/06/25/e7c382bcbe140706f19c82422da2c69a.jpg') center/cover no-repeat;
+            padding: 220px 0 150px;
+            text-align: center;
+            color: #fff;
+        }
+        .page-banner h1 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .page-banner p {
+            font-size: 17px;
+            max-width: 750px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* ======== 面包屑 ======== */
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 12px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .breadcrumb a {
+            color: #1a73e8;
+        }
+
+        /* ======== 通用标题 ======== */
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: #1a3a5c;
+            margin-bottom: 8px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 36px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section {
+            padding: 50px 0;
+        }
+        .section-light {
+            background: #f7f9fc;
+        }
+
+        /* ======== 类型卡片网格 ======== */
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .type-card {
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #edf2f7;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .type-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+        .type-card .card-img {
+            height: 200px;
+            background: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #1a3a5c;
+            overflow: hidden;
+        }
+        .type-card .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .type-card .card-img .placeholder {
+            color: #b0c4d8;
+            font-size: 14px;
+            text-align: center;
+            padding: 10px;
+        }
+        .type-card .info {
+            padding: 20px 22px 24px;
+        }
+        .type-card .info h3 {
+            color: #1a3a5c;
+            font-size: 19px;
+            margin-bottom: 6px;
+        }
+        .type-card .info h3 a {
+            color: #1a3a5c;
+        }
+        .type-card .info h3 a:hover {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .type-card .info p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .type-card .info .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .type-card .info .tags span {
+            background: #eef2f7;
+            color: #555;
+            font-size: 12px;
+            padding: 2px 14px;
+            border-radius: 20px;
+        }
+        .type-card .info .link {
+            font-weight: 600;
+            color: #1a73e8;
+            font-size: 14px;
+        }
+
+        /* ======== 快速参考 ======== */
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .ref-card {
+            background: #f7f9fc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #edf2f7;
+        }
+        .ref-card .icon {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .ref-card h4 {
+            color: #1a3a5c;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+        .ref-card p {
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* ======== CTA ======== */
+        .cta-section {
+            background: #1a3a5c;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        .cta-section .btn-white {
+            background: #fff;
+            color: #1a3a5c;
+            padding: 12px 34px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .cta-section .btn-white:hover {
+            background: #e8f0fe;
+            text-decoration: none;
+        }
+
+        /* ======== 底部 ======== */
+        .footer {
+            background: #0d2a44;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 30px 0;
+            border-top: 3px solid #1a73e8;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.9);
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        /* ======== 响应式 ======== */
+        @media (max-width: 992px) {
+            .type-grid { grid-template-columns: 1fr 1fr; }
+            .ref-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .page-banner { padding: 60px 0 50px; }
+            .page-banner h1 { font-size: 28px; }
+            .type-grid { grid-template-columns: 1fr; }
+            .ref-grid { grid-template-columns: 1fr; }
+            .navbar .container { flex-direction: column; gap: 10px; }
+            .nav-links { justify-content: center; gap: 14px; }
+            .section-title { font-size: 22px; }
+        }
+        @media (max-width: 480px) {
+            .page-banner { padding: 50px 0 40px; }
+            .page-banner h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- 导航 -->
+<!-- ============================================================ -->
+<nav class="navbar">
+    <div class="container">
+        <a href="/" class="logo">shaft<span>-collar</span></a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/types/" class="active">Types</a></li>
+            <li><a href="/materials/">Materials</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/contact/" class="btn-nav">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ============================================================ -->
+<!-- 页面横幅 -->
+<!-- ============================================================ -->
+<section class="page-banner">
+    <div class="container">
+        <h1>All Shaft Collar Types</h1>
+        <p>Explore our full range of shaft collars — from standard set screw designs to custom-engineered solutions for demanding applications.</p>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 面包屑 -->
+<!-- ============================================================ -->
+<div class="breadcrumb">
+    <div class="container">
+        <a href="/">Home</a> / <strong>Types</strong>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 类型卡片 -->
+<!-- ============================================================ -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Shaft Collar Types We Manufacture</h2>
+        <p class="section-sub">Click any type to view specifications, materials, and applications.</p>
+        <div class="type-grid">
+
+            <!-- 1. Set Screw Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <!-- 替换 src 为实际图片地址 -->
+                    <img src="https://i.imgs.ovh/2026/06/25/a9636e2db1947c18e543e06c7abfcab4.png" alt="Set Screw Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>🔩</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Set Screw Collar</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/set-screw-collars/">Set Screw Collars</a></h3>
+                    <p>Cost-effective, one-piece design for axial positioning. Secure with a single set screw.</p>
+                    <div class="tags">
+                        <span>Carbon Steel</span>
+                        <span>Stainless Steel</span>
+                        <span>Black Oxide</span>
+                    </div>
+                    <a href="/types/set-screw-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 2. Split Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://i.imgs.ovh/2026/06/25/6fe9ca33f7b2630aae7b0a2d98417ad9.jpg" alt="Split Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>🔧</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Split Collar</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/split-collars/">Split Collars</a></h3>
+                    <p>Two-piece design with no shaft damage. Provides higher holding torque than set screw types.</p>
+                    <div class="tags">
+                        <span>Steel</span>
+                        <span>Stainless</span>
+                        <span>Aluminum</span>
+                    </div>
+                    <a href="/types/split-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 3. Clamp / Single Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://i.imgs.ovh/2026/06/25/aab4061edba9932c5238e3f582f14108.png" alt="Clamp Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>⚙️</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Clamp Collar</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/clamp-collars/">Clamp / Single Shaft Collars</a></h3>
+                    <p>Single-split design with uniform radial clamping force. Protects shaft surface.</p>
+                    <div class="tags">
+                        <span>Steel</span>
+                        <span>Stainless</span>
+                        <span>Aluminum</span>
+                    </div>
+                    <a href="/types/clamp-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 4. Stainless Steel Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://i.imgs.ovh/2026/06/25/5a90b1f56d191221473adf5a212fe185.jpg" alt="Stainless Steel Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>🔹</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Stainless Steel</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/stainless-steel-collars/">Stainless Steel Shaft Collars</a></h3>
+                    <p>303/304/316 stainless steel. Corrosion-resistant for harsh environments and washdown applications.</p>
+                    <div class="tags">
+                        <span>303</span>
+                        <span>304</span>
+                        <span>316</span>
+                    </div>
+                    <a href="/types/stainless-steel-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 5. Aluminum Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://i.imgs.ovh/2026/06/25/d08cb79d6b1b175807e429b8242136fd.jpg" alt="Aluminum Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>🔸</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Aluminum</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/aluminum-collars/">Aluminum Shaft Collars</a></h3>
+                    <p>Lightweight, anodizable, low inertia. Ideal for robotics and high-speed applications.</p>
+                    <div class="tags">
+                        <span>6061</span>
+                        <span>7075</span>
+                        <span>Anodized</span>
+                    </div>
+                    <a href="/types/aluminum-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 6. Plastic POM Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://i.imgs.ovh/2026/06/25/3aa9ba0f635ac23b7bc417e9cfd11bb0.png" alt="Plastic Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>🧩</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Plastic</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/plastic-collars/">Plastic POM Shaft Collars</a></h3>
+                    <p>Lightweight, corrosion-resistant, non-marring. POM &amp; Nylon options for specialty applications.</p>
+                    <div class="tags">
+                        <span>POM</span>
+                        <span>Nylon</span>
+                        <span>Delrin</span>
+                    </div>
+                    <a href="/types/plastic-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 7. Quick Release Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://i.imgs.ovh/2026/06/25/99a13fba86493ed3c86ba1c7f3433dee.jpg" alt="Quick Release Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>⚡</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Quick Release</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/quick-release-collars/">Quick Release Shaft Collars</a></h3>
+                    <p>Tool-free operation for frequent adjustments. Ideal for changeover-intensive applications.</p>
+                    <div class="tags">
+                        <span>Steel</span>
+                        <span>Stainless</span>
+                        <span>Handle</span>
+                    </div>
+                    <a href="/types/quick-release-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 8. Flanged Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://www.jingbang-tech.com/wp-content/uploads/2024/10/%E6%9C%AA%E6%A0%87%E9%A2%98-1.webp" alt="Flanged Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>⏹️</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Flanged</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/flanged-collars/">Flanged Shaft Collars</a></h3>
+                    <p>Provides a stable mounting surface for bearings, sprockets, and other components.</p>
+                    <div class="tags">
+                        <span>Steel</span>
+                        <span>Stainless</span>
+                        <span>Custom</span>
+                    </div>
+                    <a href="/types/flanged-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 9. Keyed Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://www.jingbang-tech.com/wp-content/uploads/2024/10/shaft-collars-50.webp" alt="Keyed Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>🔑</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Keyed</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/keyed-collars/">Keyed Shaft Collars</a></h3>
+                    <p>Anti-rotation design for torque transmission. Suitable for power transmission applications.</p>
+                    <div class="tags">
+                        <span>Steel</span>
+                        <span>Stainless</span>
+                        <span>Keyed Bore</span>
+                    </div>
+                    <a href="/types/keyed-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 10. Threaded Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://www.jingbang-tech.com/wp-content/uploads/2024/07/shaft_collars_181.webp" alt="Threaded Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>🔩</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Threaded</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/threaded-collars/">Threaded Shaft Collars</a></h3>
+                    <p>Precise axial adjustment along threaded shafts. Ideal for positioning applications.</p>
+                    <div class="tags">
+                        <span>Steel</span>
+                        <span>Stainless</span>
+                        <span>Custom Thread</span>
+                    </div>
+                    <a href="/types/threaded-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 11. Double Wide Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://www.jingbang-tech.com/wp-content/uploads/2024/10/double-wide-2.webp" alt="Double Wide Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>📏</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Double Wide</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/double-wide-collars/">Double Wide Shaft Collars</a></h3>
+                    <p>Extra stability and increased load-bearing capacity. Wider face for better positioning.</p>
+                    <div class="tags">
+                        <span>Steel</span>
+                        <span>Stainless</span>
+                        <span>Aluminum</span>
+                    </div>
+                    <a href="/types/double-wide-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+            <!-- 12. Hex Shaft Collars -->
+            <div class="type-card">
+                <div class="card-img">
+                    <img src="https://www.jingbang-tech.com/wp-content/uploads/2024/10/shaft-collars-258.webp" alt="Hex Collar" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-size:48px;\'>⬡</span><div class=\'placeholder\' style=\'font-size:14px;color:#b0c4d8;\'>Hex</div>'">
+                </div>
+                <div class="info">
+                    <h3><a href="/types/hex-collars/">Hex Shaft Collars</a></h3>
+                    <p>Hexagonal bore for secure positioning on hex shafts. Prevents rotation under load.</p>
+                    <div class="tags">
+                        <span>Steel</span>
+                        <span>Stainless</span>
+                        <span>Custom Bore</span>
+                    </div>
+                    <a href="/types/hex-collars/" class="link">View Details →</a>
+                </div>
+            </div>
+
+        </div>
+        <div style="text-align:center; margin-top: 36px;">
+            <a href="/custom/" class="btn-outline" style="border:2px solid #1a3a5c; color:#1a3a5c; padding:12px 40px; border-radius:30px; display:inline-block; font-weight:600;">View All Custom Options →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 快速参考 -->
+<!-- ============================================================ -->
+<section class="section section-light">
+    <div class="container">
+        <h2 class="section-title">Quick Reference</h2>
+        <p class="section-sub">Materials and applications at a glance.</p>
+        <div class="ref-grid">
+            <div class="ref-card">
+                <span class="icon">🔩</span>
+                <h4>Steel</h4>
+                <p>Carbon &amp; alloy steels</p>
+            </div>
+            <div class="ref-card">
+                <span class="icon">🔹</span>
+                <h4>Stainless</h4>
+                <p>303 / 304 / 316</p>
+            </div>
+            <div class="ref-card">
+                <span class="icon">🔸</span>
+                <h4>Aluminum</h4>
+                <p>6061 / 7075</p>
+            </div>
+            <div class="ref-card">
+                <span class="icon">🧩</span>
+                <h4>Plastic</h4>
+                <p>POM / Nylon / Delrin</p>
+            </div>
+            <div class="ref-card">
+                <span class="icon">🏭</span>
+                <h4>Automation</h4>
+                <p>Robotics &amp; conveyors</p>
+            </div>
+            <div class="ref-card">
+                <span class="icon">⚙️</span>
+                <h4>Industrial</h4>
+                <p>Machinery &amp; equipment</p>
+            </div>
+            <div class="ref-card">
+                <span class="icon">🚗</span>
+                <h4>Automotive</h4>
+                <p>Drivetrain &amp; fixtures</p>
+            </div>
+            <div class="ref-card">
+                <span class="icon">✈️</span>
+                <h4>Aerospace</h4>
+                <p>Ground support</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CTA -->
+<!-- ============================================================ -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Need a Custom Shaft Collar?</h2>
+        <p>Tell us your specifications — bore size, material, features. We'll provide a DFM review and quote within 24 hours.</p>
+        <a href="/contact/" class="btn-white">Contact Our Engineering Team →</a>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 引流到主站 -->
+<!-- ============================================================ -->
+<section style="background: #1a3a5c; color: #fff; padding: 30px 0; text-align: center;">
+    <div class="container">
+        <p style="font-size: 15px; color: rgba(255,255,255,0.85);">
+            shaft-collar.com is a brand of <strong>JingBang Tech</strong> —
+            <a href="https://www.jingbang-tech.com" target="_blank" rel="noopener" style="color: #6ab0f7;">Visit our main site →</a>
+        </p>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 底部 -->
+<!-- ============================================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/types/">Types</a>
+            <a href="/materials/">Materials</a>
+            <a href="/resources/">Resources</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <p>© 2026 shaft-collar.com | Precision Shaft Collar Manufacturer</p>
+        <p style="font-size: 14px; margin-top: 4px;">
+            Email: <a href="mailto:abby@jingbang-tech.com">abby@jingbang-tech.com</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
