@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaft Collar Material Comparison Guide | shaft-collar.com</title>
+    <style>
+        /* ======== 基础重置 & 全局 ======== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.7;
+            background: #fafbfc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ======== 导航 ======== */
+        .navbar {
+            background: #1a3a5c;
+            color: #fff;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #2a5a8c;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .logo span {
+            color: #6ab0f7;
+        }
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            font-size: 15px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            text-decoration: none;
+            border-bottom-color: #6ab0f7;
+        }
+        .nav-links .btn-nav {
+            background: #2a7de1;
+            padding: 6px 22px;
+            border-radius: 20px;
+            border-bottom: none;
+            font-weight: 500;
+        }
+        .nav-links .btn-nav:hover {
+            background: #4a9df1;
+            border-bottom: none;
+        }
+        .nav-links .active {
+            color: #fff;
+            border-bottom-color: #6ab0f7;
+        }
+
+        /* ======== 页面横幅（背景图片 + 模糊效果） ======== */
+        .page-banner {
+            position: relative;
+            padding: 60px 0 50px;
+            text-align: center;
+            color: #fff;
+            background-image: url('https://www.jingbang-tech.com/wp-content/uploads/2025/10/shaft-collar-5-1024x576.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+            z-index: 0;
+            border-bottom: 4px solid #2a7de1;
+        }
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            background-attachment: fixed;
+            filter: blur(6px);
+            transform: scale(1.05);
+            z-index: -1;
+        }
+        .page-banner .banner-content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        .page-banner h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+        .page-banner .subhead {
+            font-size: 17px;
+            color: rgba(255,255,255,0.9);
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        .page-banner .meta-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 16px;
+            font-size: 13px;
+            color: #6ab0f7;
+            background: rgba(255,255,255,0.10);
+            padding: 10px 24px;
+            border-radius: 40px;
+            max-width: 780px;
+            margin: 0 auto 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .page-banner .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+        .page-banner .btn-white {
+            background: #fff;
+            color: #1a3a5c;
+            padding: 10px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .page-banner .btn-white:hover {
+            background: #e8f0fe;
+            text-decoration: none;
+            transform: scale(1.02);
+        }
+        .page-banner .btn-outline-light {
+            border: 2px solid rgba(255,255,255,0.5);
+            color: #fff;
+            padding: 10px 32px;
+            border-radius: 30px;
+            font-weight: 500;
+            display: inline-block;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .page-banner .btn-outline-light:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: #fff;
+            text-decoration: none;
+        }
+
+        /* ======== 主体内容 ======== */
+        .section {
+            padding: 50px 0;
+        }
+        .section-light {
+            background: #fff;
+        }
+        .section-title {
+            font-size: 28px;
+            color: #1a3a5c;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .section-sub {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 36px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ======== 材料卡片 (每行2个) ======== */
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 10px;
+        }
+        .material-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 22px 22px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            border: 1px solid #eef2f6;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .material-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+        }
+        .material-card .card-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            background: #f0f2f5;
+        }
+        .material-card .icon {
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+        .material-card h3 {
+            font-size: 19px;
+            color: #1a3a5c;
+            margin-bottom: 4px;
+        }
+        .material-card .sub {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .material-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 12px 0;
+            flex: 1;
+        }
+        .material-card ul li {
+            padding: 4px 0;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f2f5;
+            display: flex;
+            justify-content: space-between;
+        }
+        .material-card ul li:last-child {
+            border-bottom: none;
+        }
+        .material-card ul li .label {
+            color: #666;
+        }
+        .material-card ul li .value {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .material-card .badge {
+            display: inline-block;
+            background: #eef3f9;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #1a3a5c;
+            font-weight: 600;
+            align-self: flex-start;
+            margin-top: 6px;
+        }
+
+        /* ======== 对比表格 ======== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 30px 0 10px;
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid #e9edf2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            min-width: 640px;
+        }
+        .compare-table th {
+            background: #f2f5f9;
+            color: #1a3a5c;
+            font-weight: 600;
+            padding: 16px 18px;
+            text-align: left;
+            border-bottom: 2px solid #dce2ea;
+        }
+        .compare-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #e9edf2;
+            vertical-align: top;
+        }
+        .compare-table tr:last-child td {
+            border-bottom: none;
+        }
+        .compare-table .highlight {
+            background: #f7faff;
+        }
+        .compare-table .tag {
+            display: inline-block;
+            background: #eef3f9;
+            padding: 0 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #1a3a5c;
+        }
+
+        /* ======== FAQ ======== */
+        .faq-item {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .faq-item .question {
+            padding: 16px 20px;
+            font-weight: 600;
+            color: #1a3a5c;
+            cursor: pointer;
+            background: #f7f9fc;
+            transition: background 0.2s;
+        }
+        .faq-item .question:hover {
+            background: #edf2f7;
+        }
+        .faq-item .answer {
+            padding: 16px 20px;
+            color: #444;
+            font-size: 15px;
+            border-top: 1px solid #e2e8f0;
+            display: none;
+        }
+        .faq-item .answer.show {
+            display: block;
+        }
+        .faq-item .question::after {
+            content: '▾';
+            float: right;
+            font-size: 18px;
+            color: #1a73e8;
+        }
+        .faq-item .question.active::after {
+            content: '▴';
+        }
+
+        /* ======== 底部 ======== */
+        .footer {
+            background: #0d2a44;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 30px 0;
+            border-top: 3px solid #1a73e8;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.9);
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        /* ======== 响应式 ======== */
+        @media (max-width: 992px) {
+            .material-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .page-banner h1 { font-size: 28px; }
+            .page-banner { padding: 40px 0 30px; }
+            .page-banner .banner-content { padding: 30px 16px; }
+            .section-title { font-size: 22px; }
+            .material-grid { grid-template-columns: 1fr; }
+            .navbar .container { flex-direction: column; gap: 10px; }
+            .nav-links { justify-content: center; gap: 14px; }
+            .page-banner .meta-tags { font-size: 11px; padding: 8px 16px; flex-wrap: wrap; }
+            .page-banner { background-attachment: scroll; }
+            .page-banner::before { background-attachment: scroll; }
+        }
+        @media (max-width: 480px) {
+            .page-banner h1 { font-size: 22px; }
+            .page-banner .btn-group a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- 导航 -->
+<!-- ============================================================ -->
+<nav class="navbar">
+    <div class="container">
+        <a href="/" class="logo">shaft<span>-collar</span></a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/types/">Types</a></li>
+            <li><a href="/materials/" class="active">Materials</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/contact/" class="btn-nav">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ============================================================ -->
+<!-- 页面横幅（背景图片 + 模糊效果） -->
+<!-- ============================================================ -->
+<section class="page-banner">
+    <div class="container">
+        <div class="banner-content">
+            <h1>Shaft Collar Material Comparison: A Technical Guide</h1>
+            <p class="subhead">The selection of a shaft collar material is a critical design decision driven by a trade-off between mechanical properties, environmental resistance, weight, and cost. While functionally similar, a collar made from Grade 316 stainless steel has fundamentally different performance characteristics than one machined from 6061 aluminum. This guide provides a direct comparison of the most common materials to inform proper specification.</p>
+            <div class="meta-tags">
+                🔧 SHAFT COLLAR MATERIALS — CARBON STEEL · STAINLESS STEEL · ALUMINUM · ENGINEERING PLASTIC — HOLDING POWER · WEIGHT · CORROSION RESISTANCE — OEM MANUFACTURER — ISO 9001
+            </div>
+            <div class="btn-group">
+                <a href="#analysis" class="btn-white">View Analysis →</a>
+                <a href="#quote" class="btn-outline-light">Request a Quote →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 材料分析 -->
+<!-- ============================================================ -->
+<section id="analysis" class="section section-light">
+    <div class="container">
+        <h2 class="section-title">Analysis of Primary Shaft Collar Materials</h2>
+        <p class="section-sub">We will evaluate the four primary material categories: carbon steel, stainless steel, aluminum, and engineering plastics.</p>
+
+        <div class="material-grid">
+            <!-- 碳钢 -->
+            <div class="material-card">
+                <img class="card-img" src="https://www.jingbang-tech.com/wp-content/uploads/2025/11/shaft-collars-16-600x450.webp" alt="Carbon Steel Shaft Collar" onerror="this.style.display='none'">
+                <span class="icon">⚙️</span>
+                <h3>Carbon Steel</h3>
+                <div class="sub">1215 / C1018 with Black Oxide</div>
+                <ul>
+                    <li><span class="label">Holding Power</span><span class="value">Highest</span></li>
+                    <li><span class="label">Corrosion Resistance</span><span class="value">Poor</span></li>
+                    <li><span class="label">Weight (Density)</span><span class="value">High (~7.85 g/cm³)</span></li>
+                    <li><span class="label">Relative Cost</span><span class="value">Lowest</span></li>
+                </ul>
+                <p style="font-size:14px; color:#555; margin:8px 0 4px;"><strong>Best Suited For:</strong> General industrial machinery, power transmission, dry environments where max holding force and low cost are primary drivers.</p>
+                <span class="badge">Baseline Strength</span>
+            </div>
+
+            <!-- 不锈钢 -->
+            <div class="material-card">
+                <img class="card-img" src="https://www.jingbang-tech.com/wp-content/uploads/2024/10/shaft-collars-300x300.webp" alt="Stainless Steel Shaft Collar" onerror="this.style.display='none'">
+                <span class="icon">🔩</span>
+                <h3>Stainless Steel</h3>
+                <div class="sub">303 / 304 / 316 Grades</div>
+                <ul>
+                    <li><span class="label">Holding Power</span><span class="value">High (~85%)</span></li>
+                    <li><span class="label">Corrosion Resistance</span><span class="value">Excellent</span></li>
+                    <li><span class="label">Weight (Density)</span><span class="value">High (~8.0 g/cm³)</span></li>
+                    <li><span class="label">Relative Cost</span><span class="value">Medium-High</span></li>
+                </ul>
+                <p style="font-size:14px; color:#555; margin:8px 0 4px;"><strong>Best Suited For:</strong> Food processing, medical devices, marine, packaging, and any system requiring corrosion resistance or non-magnetic properties.</p>
+                <span class="badge">Corrosion Resistance</span>
+            </div>
+
+            <!-- 铝合金 -->
+            <div class="material-card">
+                <img class="card-img" src="https://www.jingbang-tech.com/wp-content/uploads/2025/11/shaft-collars-13-300x225.webp" alt="Aluminum Shaft Collar" onerror="this.style.display='none'">
+                <span class="icon">🔹</span>
+                <h3>Aluminum</h3>
+                <div class="sub">6061-T6 / 2024</div>
+                <ul>
+                    <li><span class="label">Holding Power</span><span class="value">Medium (~50%)</span></li>
+                    <li><span class="label">Corrosion Resistance</span><span class="value">Good (anodized)</span></li>
+                    <li><span class="label">Weight (Density)</span><span class="value">Low (~2.7 g/cm³)</span></li>
+                    <li><span class="label">Relative Cost</span><span class="value">Medium</span></li>
+                </ul>
+                <p style="font-size:14px; color:#555; margin:8px 0 4px;"><strong>Best Suited For:</strong> Robotics, aerospace, motion control, scientific instrumentation — any application where minimizing weight and inertia is a primary goal.</p>
+                <span class="badge">Lightweight</span>
+            </div>
+
+            <!-- 工程塑料 -->
+            <div class="material-card">
+                <img class="card-img" src="https://www.jingbang-tech.com/wp-content/uploads/2024/10/202108111610144690-300x300.jpg" alt="Plastic Shaft Collar" onerror="this.style.display='none'">
+                <span class="icon">🧩</span>
+                <h3>Plastic (Acetal / POM)</h3>
+                <div class="sub">Delrin® / POM</div>
+                <ul>
+                    <li><span class="label">Holding Power</span><span class="value">Low</span></li>
+                    <li><span class="label">Corrosion Resistance</span><span class="value">Excellent (inert)</span></li>
+                    <li><span class="label">Weight (Density)</span><span class="value">Lowest (~1.4 g/cm³)</span></li>
+                    <li><span class="label">Relative Cost</span><span class="value">Low-Medium</span></li>
+                </ul>
+                <p style="font-size:14px; color:#555; margin:8px 0 4px;"><strong>Best Suited For:</strong> Light-duty applications in highly corrosive environments, medical prototypes, electronics assembly (insulators), and where contact with fragile shafts must not cause damage.</p>
+                <span class="badge">Non-Conductive</span>
+            </div>
+        </div>
+
+        <!-- 对比表格 -->
+        <h3 style="font-size:22px; color:#1a3a5c; margin-top:50px; margin-bottom:8px; text-align:center;">Direct Material Comparison: Steel vs. Stainless vs. Aluminum</h3>
+        <div class="table-wrap">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Steel (Black Oxide)</th>
+                        <th>Stainless Steel (303/304)</th>
+                        <th>Aluminum (6061)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Relative Holding Power</strong></td>
+                        <td>Highest (100%)</td>
+                        <td>High (~85%)</td>
+                        <td>Medium (~50%)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Corrosion Resistance</strong></td>
+                        <td>Poor</td>
+                        <td>Excellent</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Density (Weight)</strong></td>
+                        <td>High</td>
+                        <td>High</td>
+                        <td>Low</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Relative Cost</strong></td>
+                        <td>Low</td>
+                        <td>High</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Key Advantage</strong></td>
+                        <td>Max Strength / Low Cost</td>
+                        <td>Corrosion Resistance</td>
+                        <td>Low Weight / Inertia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary Limitation</strong></td>
+                        <td>Poor Corrosion Resistance</td>
+                        <td>Cost</td>
+                        <td>Lower Holding Power</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p style="text-align:center; font-size:15px; color:#666; margin-top:16px;">
+            🔍 External Resource: For detailed, quantitative data on the mechanical and chemical properties of these alloys, an authoritative, non-commercial engineering resource like <a href="https://www.matweb.com" target="_blank" rel="noopener">MatWeb</a> provides comprehensive material property data sheets.
+        </p>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FAQ -->
+<!-- ============================================================ -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">When choosing between stainless vs. aluminum shaft collars, what is the main trade-off?</div>
+            <div class="answer">The primary trade-off is between corrosion resistance/strength (stainless) and weight reduction (aluminum). Stainless steel offers superior strength and excellent corrosion resistance but is heavier and more expensive. Aluminum is much lighter (about 1/3 the weight of steel) and offers good corrosion resistance, but has significantly lower holding power and is more susceptible to galling.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">Is a steel vs. aluminum shaft collar decision purely about strength?</div>
+            <div class="answer">No. While steel provides maximum holding force, the decision also involves weight, cost, corrosion resistance, and the operating environment. For high-speed rotating applications, the lower inertia of aluminum can be more critical than raw strength. For washdown environments, stainless steel's corrosion resistance is mandatory.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">What is galvanic corrosion and why is it important for shaft collars?</div>
+            <div class="answer">Galvanic corrosion occurs when two dissimilar metals are in contact in the presence of an electrolyte (like moisture). For shaft collars, this is particularly important when using aluminum collars on steel shafts. The aluminum can corrode preferentially. Using a protective coating, anodizing, or isolating materials can prevent this.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">Does the shaft material affect which collar material I should choose?</div>
+            <div class="answer">Yes. The shaft material significantly influences collar selection. For hard steel shafts, a stainless steel or steel collar is typically fine. For soft shafts (like aluminum or plastic), plastic collars or those with a softer set screw tip are preferred to avoid damaging the shaft surface.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">For a washdown environment in food processing, which material is required?</div>
+            <div class="answer">For food processing washdown environments, stainless steel (typically 304 or 316) is required. It provides the necessary corrosion resistance to withstand frequent cleaning with water and chemicals, prevents rust, and meets hygienic standards. Plastic collars may be used in some specialized, non-contact areas.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 引流到主站 -->
+<!-- ============================================================ -->
+<section style="background: #1a3a5c; color: #fff; padding: 30px 0; text-align: center;">
+    <div class="container">
+        <p style="font-size: 15px; color: rgba(255,255,255,0.85);">
+            shaft-collar.com is a brand of <strong>JingBang Tech</strong> —
+            <a href="https://www.jingbang-tech.com/shaft-collar-manufacturers/" target="_blank" rel="noopener" style="color: #6ab0f7;">Visit our main site →</a>
+        </p>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 底部 -->
+<!-- ============================================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/types/">Types</a>
+            <a href="/materials/">Materials</a>
+            <a href="/resources/">Resources</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <p>© 2026 shaft-collar.com | Precision Shaft Collar Manufacturer</p>
+        <p style="font-size: 14px; margin-top: 4px;">
+            Email: <a href="mailto:abby@jingbang-tech.com">abby@jingbang-tech.com</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
