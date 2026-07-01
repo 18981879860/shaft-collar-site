@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Resources & Guides | shaft-collar.com</title>
+    <style>
+        /* ======== 基础重置 & 全局 ======== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.7;
+            background: #fafbfc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ======== 导航 ======== */
+        .navbar {
+            background: #1a3a5c;
+            color: #fff;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #2a5a8c;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .logo span {
+            color: #6ab0f7;
+        }
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            font-size: 15px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            text-decoration: none;
+            border-bottom-color: #6ab0f7;
+        }
+        .nav-links .btn-nav {
+            background: #2a7de1;
+            padding: 6px 22px;
+            border-radius: 20px;
+            border-bottom: none;
+            font-weight: 500;
+        }
+        .nav-links .btn-nav:hover {
+            background: #4a9df1;
+            border-bottom: none;
+        }
+        .nav-links .active {
+            color: #fff;
+            border-bottom-color: #6ab0f7;
+        }
+
+        /* ======== 页面横幅（背景图片 + 模糊） ======== */
+        .page-banner {
+            position: relative;
+            padding: 60px 0 50px;
+            text-align: center;
+            color: #fff;
+            background-image: url('https://www.jingbang-tech.com/wp-content/uploads/2025/10/shaft-collar-11-1024x768.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+            z-index: 0;
+            border-bottom: 4px solid #2a7de1;
+        }
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            background-attachment: fixed;
+            filter: blur(6px);
+            transform: scale(1.05);
+            z-index: -1;
+        }
+        .page-banner .banner-content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        .page-banner h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+        .page-banner .subhead {
+            font-size: 17px;
+            color: rgba(255,255,255,0.9);
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        .page-banner .meta-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 16px;
+            font-size: 13px;
+            color: #6ab0f7;
+            background: rgba(255,255,255,0.10);
+            padding: 10px 24px;
+            border-radius: 40px;
+            max-width: 780px;
+            margin: 0 auto 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* ======== 主体内容 ======== */
+        .section {
+            padding: 50px 0;
+        }
+        .section-light {
+            background: #fff;
+        }
+        .section-title {
+            font-size: 28px;
+            color: #1a3a5c;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .section-sub {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 36px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ======== 资源卡片网格 ======== */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 10px;
+        }
+        .resource-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 24px 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            border: 1px solid #eef2f6;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            border-left: 4px solid #1a73e8;
+        }
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+        }
+        .resource-card .icon {
+            font-size: 28px;
+            margin-bottom: 2px;
+        }
+        .resource-card h3 {
+            font-size: 18px;
+            color: #1a3a5c;
+            margin-bottom: 4px;
+        }
+        .resource-card p {
+            color: #555;
+            font-size: 14px;
+            flex: 1;
+            margin-bottom: 12px;
+        }
+        .resource-card .link {
+            font-weight: 500;
+            font-size: 14px;
+            color: #1a73e8;
+            align-self: flex-start;
+        }
+        .resource-card .tag {
+            display: inline-block;
+            background: #eef3f9;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            color: #1a3a5c;
+            font-weight: 600;
+            align-self: flex-start;
+            margin-top: 8px;
+        }
+
+        /* ======== 博客列表（预留） ======== */
+        .blog-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .blog-item {
+            background: #fff;
+            padding: 20px 24px;
+            border-radius: 12px;
+            border: 1px solid #eef2f6;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .blog-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+        .blog-item .blog-info {
+            flex: 1;
+        }
+        .blog-item .blog-info h4 {
+            font-size: 17px;
+            color: #1a3a5c;
+            margin-bottom: 2px;
+        }
+        .blog-item .blog-info p {
+            color: #777;
+            font-size: 14px;
+            margin: 0;
+        }
+        .blog-item .blog-meta {
+            font-size: 13px;
+            color: #999;
+            text-align: right;
+            min-width: 120px;
+        }
+        .blog-item .blog-meta .date {
+            display: block;
+        }
+        .blog-item .blog-meta .read-link {
+            font-weight: 500;
+            color: #1a73e8;
+        }
+
+        /* ======== FAQ ======== */
+        .faq-item {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .faq-item .question {
+            padding: 16px 20px;
+            font-weight: 600;
+            color: #1a3a5c;
+            cursor: pointer;
+            background: #f7f9fc;
+            transition: background 0.2s;
+        }
+        .faq-item .question:hover {
+            background: #edf2f7;
+        }
+        .faq-item .answer {
+            padding: 16px 20px;
+            color: #444;
+            font-size: 15px;
+            border-top: 1px solid #e2e8f0;
+            display: none;
+        }
+        .faq-item .answer.show {
+            display: block;
+        }
+        .faq-item .question::after {
+            content: '▾';
+            float: right;
+            font-size: 18px;
+            color: #1a73e8;
+        }
+        .faq-item .question.active::after {
+            content: '▴';
+        }
+
+        /* ======== 底部 ======== */
+        .footer {
+            background: #0d2a44;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 30px 0;
+            border-top: 3px solid #1a73e8;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.9);
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        /* ======== 响应式 ======== */
+        @media (max-width: 768px) {
+            .page-banner h1 { font-size: 28px; }
+            .page-banner { padding: 40px 0 30px; }
+            .page-banner .banner-content { padding: 30px 16px; }
+            .section-title { font-size: 22px; }
+            .navbar .container { flex-direction: column; gap: 10px; }
+            .nav-links { justify-content: center; gap: 14px; }
+            .page-banner .meta-tags { font-size: 11px; padding: 8px 16px; flex-wrap: wrap; }
+            .page-banner { background-attachment: scroll; }
+            .page-banner::before { background-attachment: scroll; }
+            .blog-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .blog-item .blog-meta { text-align: left; width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .page-banner h1 { font-size: 22px; }
+            .resource-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- 导航 -->
+<!-- ============================================================ -->
+<nav class="navbar">
+    <div class="container">
+        <a href="/" class="logo">shaft<span>-collar</span></a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/types/">Types</a></li>
+            <li><a href="/materials/">Materials</a></li>
+            <li><a href="/resources/" class="active">Resources</a></li>
+            <li><a href="/contact/" class="btn-nav">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ============================================================ -->
+<!-- 页面横幅 -->
+<!-- ============================================================ -->
+<section class="page-banner">
+    <div class="container">
+        <div class="banner-content">
+            <h1>📚 Engineering Resources & Guides</h1>
+            <p class="subhead">Technical guides, calculators, design best practices, and engineering references to help you specify the optimal shaft collar for your application.</p>
+            <div class="meta-tags">
+                🔧 TECHNICAL GUIDES · DESIGN CALCULATORS · MATERIAL COMPARISONS · TOLERANCE REFERENCE — ENGINEERING RESOURCES — OEM MANUFACTURER — ISO 9001
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 资源中心 -->
+<!-- ============================================================ -->
+<section class="section section-light">
+    <div class="container">
+        <h2 class="section-title">Featured Engineering Resources</h2>
+        <p class="section-sub">Expert technical content to guide your shaft collar selection and design process.</p>
+
+        <div class="resource-grid">
+            <div class="resource-card">
+                <span class="icon">📘</span>
+                <h3>Clamp vs Set Screw Collars</h3>
+                <p>Compare holding force, shaft damage, and application suitability between these two common designs.</p>
+                <a href="/resources/clamp-vs-set-screw/" class="link">Read Guide →</a>
+                <span class="tag">Popular</span>
+            </div>
+            <div class="resource-card">
+                <span class="icon">⚡</span>
+                <h3>Clamping Force Calculation</h3>
+                <p>How to calculate torque transmission and axial holding capacity for your specific shaft collar design.</p>
+                <a href="/resources/clamping-force-calculation/" class="link">Read Guide →</a>
+                <span class="tag">Engineering</span>
+            </div>
+            <div class="resource-card">
+                <span class="icon">🔩</span>
+                <h3>How Shaft Collars Work</h3>
+                <p>Understand the mechanics behind different collar designs: set screw, split, and clamp styles.</p>
+                <a href="/resources/how-shaft-collars-work/" class="link">Read Guide →</a>
+                <span class="tag">Basics</span>
+            </div>
+            <div class="resource-card">
+                <span class="icon">🧩</span>
+                <h3>Material Comparison Guide</h3>
+                <p>Stainless vs aluminum vs plastic — strengths, weaknesses, and cost considerations for shaft collars.</p>
+                <a href="/resources/material-comparison-guide/" class="link">Read Guide →</a>
+                <span class="tag">Reference</span>
+            </div>
+            <div class="resource-card">
+                <span class="icon">📐</span>
+                <h3>Shaft Collar Design Guide</h3>
+                <p>Best practices for specifying custom shaft collars, including bore sizes, materials, and special features.</p>
+                <a href="/resources/design-guide/" class="link">Read Guide →</a>
+                <span class="tag">Design</span>
+            </div>
+            <div class="resource-card">
+                <span class="icon">📏</span>
+                <h3>Standard Sizes & Tolerances</h3>
+                <p>Inch and metric shaft collar dimensional standards and ISO tolerance grades for precision applications.</p>
+                <a href="/resources/standards-tolerances/" class="link">View Reference →</a>
+                <span class="tag">Technical Data</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 博客动态（预留位置，后续在此路径下更新） -->
+<!-- ============================================================ -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">📝 Latest Articles & Insights</h2>
+        <p class="section-sub">Stay updated with our engineering blog. New content added regularly.</p>
+
+        <div class="blog-list">
+            <!-- 示例文章1 -->
+            <div class="blog-item">
+                <div class="blog-info">
+                    <h4><a href="/resources/blog/choosing-shaft-collar-material/">Choosing the Right Shaft Collar Material for Your Application</a></h4>
+                    <p>A comprehensive guide to material selection based on load, environment, and cost.</p>
+                </div>
+                <div class="blog-meta">
+                    <span class="date">2026-07-01</span>
+                    <a href="/resources/blog/choosing-shaft-collar-material/" class="read-link">Read →</a>
+                </div>
+            </div>
+
+            <!-- 示例文章2 -->
+            <div class="blog-item">
+                <div class="blog-info">
+                    <h4><a href="/resources/blog/shaft-collar-tolerance-guide/">Understanding Shaft Collar Tolerances: A Practical Guide</a></h4>
+                    <p>How to specify the right bore tolerance for slip-fit, press-fit, and custom applications.</p>
+                </div>
+                <div class="blog-meta">
+                    <span class="date">2026-06-25</span>
+                    <a href="/resources/blog/shaft-collar-tolerance-guide/" class="read-link">Read →</a>
+                </div>
+            </div>
+
+            <!-- 示例文章3 -->
+            <div class="blog-item">
+                <div class="blog-info">
+                    <h4><a href="/resources/blog/custom-shaft-collar-design-tips/">5 Tips for Designing Custom Shaft Collars</a></h4>
+                    <p>Key design considerations for keyways, set screw positions, flanges, and special finishes.</p>
+                </div>
+                <div class="blog-meta">
+                    <span class="date">2026-06-18</span>
+                    <a href="/resources/blog/custom-shaft-collar-design-tips/" class="read-link">Read →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页面提示：后续更新 -->
+        <div style="text-align:center; margin-top: 20px; padding: 16px; background: #f7f9fc; border-radius: 12px; border: 1px dashed #d0d7de;">
+            <p style="color: #666; font-size: 14px;">📌 更多技术文章正在更新中 — 所有内容均会发布在 <strong>/resources/blog/</strong> 路径下</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FAQ -->
+<!-- ============================================================ -->
+<section class="section section-light">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">What is the difference between a set screw and a clamp-style shaft collar?</div>
+            <div class="answer">A set screw collar uses one or more screws that dig into the shaft to secure it. This is cost-effective but can damage the shaft. A clamp-style collar uses a split design with a clamping screw, which applies uniform radial force, does not mar the shaft, and offers higher holding torque.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">How do I calculate the clamping force of a shaft collar?</div>
+            <div class="answer">Clamping force depends on the screw torque, screw thread geometry, and friction. A general approach is to use the torque vs. tension relationship: F = T / (K * d), where T is screw torque, K is the nut factor (typically 0.2), and d is the screw diameter. For a detailed guide, refer to our <a href="/resources/clamping-force-calculation/">Clamping Force Calculation</a> resource.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">What material is best for a high-corrosion environment?</div>
+            <div class="answer">For highly corrosive environments, such as marine or chemical processing applications, 316 stainless steel is the preferred material. It offers superior resistance to chlorides and harsh chemicals. For non-metal options, plastic collars (POM) are completely inert to most chemicals.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">Can JINGBANG manufacture custom non-standard shaft collars?</div>
+            <div class="answer">Yes. We manufacture shaft collars with custom bore sizes, lengths, materials, and special features like keyways, set screw positions, or flanges. Send your 2D/3D CAD for a DFM review.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question" onclick="this.nextElementSibling.classList.toggle('show'); this.classList.toggle('active');">What are the standard tolerance grades for shaft collar bores?</div>
+            <div class="answer">Our standard bore tolerance is +0.03mm to +0.08mm for slip-fit applications (roughly ISO H8). Tighter tolerances down to +0.01mm are available upon request for precision requirements.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 引流到主站 -->
+<!-- ============================================================ -->
+<section style="background: #1a3a5c; color: #fff; padding: 30px 0; text-align: center;">
+    <div class="container">
+        <p style="font-size: 15px; color: rgba(255,255,255,0.85);">
+            shaft-collar.com is a brand of <strong>JingBang Tech</strong> —
+            <a href="https://www.jingbang-tech.com/shaft-collar-manufacturers/" target="_blank" rel="noopener" style="color: #6ab0f7;">Visit our main site →</a>
+        </p>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 底部 -->
+<!-- ============================================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/types/">Types</a>
+            <a href="/materials/">Materials</a>
+            <a href="/resources/">Resources</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <p>© 2026 shaft-collar.com | Precision Shaft Collar Manufacturer</p>
+        <p style="font-size: 14px; margin-top: 4px;">
+            Email: <a href="mailto:abby@jingbang-tech.com">abby@jingbang-tech.com</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
