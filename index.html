@@ -152,6 +152,102 @@
             background: #f7f9fc;
         }
 
+        /* ======== 轴环类型区域 - 背景图片 + 模糊 ======== */
+        .types-section {
+            position: relative;
+            padding: 60px 0;
+            background-image: url('https://www.jingbang-tech.com/wp-content/uploads/2025/10/shaft-collar-11-1024x768.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .types-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            background-attachment: fixed;
+            filter: blur(6px);
+            transform: scale(1.05);
+            z-index: -1;
+        }
+        .types-content {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(2px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+
+        /* ======== CTA 区块 - 背景图片 + 模糊 ======== */
+        .cta-section {
+            position: relative;
+            padding: 70px 0;
+            background-image: url('https://www.jingbang-tech.com/wp-content/uploads/2024/09/shaft-collars-1024x1024.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+            z-index: 0;
+            text-align: center;
+            color: #fff;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            background-attachment: fixed;
+            filter: blur(6px);
+            transform: scale(1.05);
+            z-index: -1;
+        }
+        .cta-content {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.45); /* 深色半透明，提升文字可读性 */
+            backdrop-filter: blur(2px);
+            padding: 50px 30px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            z-index: 1;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        .cta-content h2 {
+            font-size: 32px;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+        .cta-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+        }
+        .cta-content .btn-white {
+            background: #fff;
+            color: #1a3a5c;
+            padding: 12px 34px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .cta-content .btn-white:hover {
+            background: #e8f0fe;
+            transform: scale(1.03);
+            text-decoration: none;
+        }
+
         /* ======== 能力卡片网格 ======== */
         .grid-3 {
             display: grid;
@@ -164,21 +260,24 @@
             gap: 24px;
         }
         .card {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(1px);
             padding: 24px 20px;
-            border-radius: 10px;
-            border: 1px solid #edf2f7;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
             text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
         }
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.9);
         }
         .card .icon {
-            font-size: 30px;
+            font-size: 32px;
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
         .card h3 {
             color: #1a3a5c;
@@ -189,12 +288,12 @@
             color: #1a3a5c;
         }
         .card p {
-            color: #666;
+            color: #444;
             font-size: 14px;
+            margin-bottom: 6px;
         }
         .card .link {
             display: inline-block;
-            margin-top: 8px;
             font-weight: 500;
             font-size: 14px;
             color: #1a73e8;
@@ -278,31 +377,6 @@
             content: '▴';
         }
 
-        /* ======== CTA 区块 ======== */
-        .cta-green {
-            background: #3ab54b;
-            color: #fff;
-            padding: 50px 0;
-            text-align: center;
-        }
-        .cta-green h2 {
-            font-size: 28px;
-            margin-bottom: 4px;
-        }
-        .cta-green .btn-white {
-            background: #fff;
-            color: #3ab54b;
-            padding: 12px 34px;
-            border-radius: 30px;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 16px;
-        }
-        .cta-green .btn-white:hover {
-            background: #e8f0fe;
-            text-decoration: none;
-        }
-
         /* ======== 底部 ======== */
         .footer {
             background: #0d2a44;
@@ -324,6 +398,22 @@
             flex-wrap: wrap;
             margin-bottom: 12px;
         }
+        .btn-outline {
+            border: 2px solid #1a3a5c;
+            color: #1a3a5c;
+            padding: 10px 32px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.2s;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(2px);
+        }
+        .btn-outline:hover {
+            background: #1a3a5c;
+            color: #fff;
+            text-decoration: none;
+        }
 
         /* ======== 响应式 ======== */
         @media (max-width: 992px) {
@@ -338,11 +428,21 @@
             .navbar .container { flex-direction: column; gap: 10px; }
             .nav-links { justify-content: center; gap: 14px; }
             .section-title { font-size: 22px; }
-            .cta-green h2 { font-size: 22px; }
+            .cta-content h2 { font-size: 26px; }
+            .cta-content p { font-size: 16px; }
+            .types-content { padding: 30px 16px; }
+            .types-section { background-attachment: scroll; }
+            .types-section::before { background-attachment: scroll; }
+            .cta-section { background-attachment: scroll; }
+            .cta-section::before { background-attachment: scroll; }
         }
         @media (max-width: 480px) {
             .page-banner { padding: 50px 0 40px; }
             .page-banner h1 { font-size: 22px; }
+            .types-section { padding: 40px 0; }
+            .cta-section { padding: 50px 0; }
+            .cta-content { padding: 30px 20px; }
+            .cta-content h2 { font-size: 22px; }
         }
     </style>
 </head>
@@ -376,62 +476,56 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- 为什么选择我们 -->
+<!-- 轴环类型区域：背景图片 + 模糊效果 -->
 <!-- ============================================================ -->
-<section class="section">
+<section class="types-section">
     <div class="container">
-        <h2 class="section-title">Why Jingbang as Your Shaft Collar Manufacturer?</h2>
-        <p class="section-sub">We don't just sell shaft collars — we manufacture them from raw materials. With in-house CNC machining, heat treatment, and quality control, we deliver consistent products at competitive prices. <strong>OEM &amp; custom orders welcome.</strong></p>
-    </div>
-</section>
+        <div class="types-content">
+            <h2 class="section-title">All Shaft Collar Types We Manufacture</h2>
+            <p class="section-sub">Click any type to view specifications, materials, and applications.</p>
 
-<!-- ============================================================ -->
-<!-- 所有类型 -->
-<!-- ============================================================ -->
-<section class="section section-light">
-    <div class="container">
-        <h2 class="section-title">All Shaft Collar Types We Manufacture</h2>
-        <p class="section-sub">Click any type to view specifications, materials, and applications.</p>
-        <div class="grid-3">
-            <div class="card">
-                <span class="icon">🔩</span>
-                <h3><a href="#">Set Screw Collars</a></h3>
-                <p>Cost-effective, one-piece design for axial positioning.</p>
-                <a href="#" class="link">Learn More →</a>
+            <div class="grid-3">
+                <div class="card">
+                    <span class="icon">🔩</span>
+                    <h3><a href="#">Set Screw Collars</a></h3>
+                    <p>Cost-effective, one-piece design for axial positioning.</p>
+                    <a href="#" class="link">Learn More →</a>
+                </div>
+                <div class="card">
+                    <span class="icon">🔧</span>
+                    <h3><a href="#">Split Collars</a></h3>
+                    <p>Two-piece design, no shaft damage, higher holding torque.</p>
+                    <a href="#" class="link">Learn More →</a>
+                </div>
+                <div class="card">
+                    <span class="icon">⚙️</span>
+                    <h3><a href="#">Clamp / Single Shaft Collars</a></h3>
+                    <p>Single-split design, uniform radial clamping force.</p>
+                    <a href="#" class="link">Learn More →</a>
+                </div>
+                <div class="card">
+                    <span class="icon">🔹</span>
+                    <h3><a href="#">Stainless Steel Shaft Collars</a></h3>
+                    <p>303/304/316, corrosion-resistant for harsh environments.</p>
+                    <a href="#" class="link">Learn More →</a>
+                </div>
+                <div class="card">
+                    <span class="icon">🔸</span>
+                    <h3><a href="#">Aluminum Shaft Collars</a></h3>
+                    <p>Lightweight, anodizable, low inertia.</p>
+                    <a href="#" class="link">Learn More →</a>
+                </div>
+                <div class="card">
+                    <span class="icon">🧩</span>
+                    <h3><a href="#">Plastic POM Shaft Collars</a></h3>
+                    <p>Lightweight, corrosion-resistant, POM &amp; Nylon options.</p>
+                    <a href="#" class="link">Learn More →</a>
+                </div>
             </div>
-            <div class="card">
-                <span class="icon">🔧</span>
-                <h3><a href="#">Split Collars</a></h3>
-                <p>Two-piece design, no shaft damage, higher holding torque.</p>
-                <a href="#" class="link">Learn More →</a>
+
+            <div style="text-align:center; margin-top: 36px;">
+                <a href="/types/" class="btn-outline">View All Custom Options →</a>
             </div>
-            <div class="card">
-                <span class="icon">⚙️</span>
-                <h3><a href="#">Clamp / Single Shaft Collars</a></h3>
-                <p>Single-split design, uniform radial clamping force.</p>
-                <a href="#" class="link">Learn More →</a>
-            </div>
-            <div class="card">
-                <span class="icon">🔹</span>
-                <h3><a href="#">Stainless Steel Shaft Collars</a></h3>
-                <p>303/304/316, corrosion-resistant for harsh environments.</p>
-                <a href="#" class="link">Learn More →</a>
-            </div>
-            <div class="card">
-                <span class="icon">🔸</span>
-                <h3><a href="#">Aluminum Shaft Collars</a></h3>
-                <p>Lightweight, anodizable, low inertia.</p>
-                <a href="#" class="link">Learn More →</a>
-            </div>
-            <div class="card">
-                <span class="icon">🧩</span>
-                <h3><a href="#">Plastic POM Shaft Collars</a></h3>
-                <p>Lightweight, corrosion-resistant, POM &amp; Nylon options.</p>
-                <a href="#" class="link">Learn More →</a>
-            </div>
-        </div>
-        <div style="text-align:center; margin-top: 30px;">
-            <a href="/types/" class="btn-outline" style="border:2px solid #1a3a5c; color:#1a3a5c; padding:10px 32px; border-radius:30px; display:inline-block;">View All Custom Options →</a>
         </div>
     </div>
 </section>
@@ -563,13 +657,15 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- CTA -->
+<!-- CTA 区块：背景图片 + 模糊效果 -->
 <!-- ============================================================ -->
-<section class="cta-green">
+<section class="cta-section">
     <div class="container">
-        <h2>Ready to Get the Perfect Shaft Collar?</h2>
-        <p style="font-size:18px; margin-bottom:4px;">Contact Us to Get A Free Consultation</p>
-        <a href="/contact/" class="btn-white">Contact Us →</a>
+        <div class="cta-content">
+            <h2>Ready to Get the Perfect Shaft Collar?</h2>
+            <p>Contact Us to Get A Free Consultation</p>
+            <a href="/contact/" class="btn-white">Contact Us →</a>
+        </div>
     </div>
 </section>
 
@@ -605,4 +701,4 @@
 </footer>
 
 </body>
-</html> 
+</html>
