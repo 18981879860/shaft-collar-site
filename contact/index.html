@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | shaft-collar.com</title>
+    <style>
+        /* ======== 基础重置 & 全局 ======== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.7;
+            background: #fafbfc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ======== 导航 ======== */
+        .navbar {
+            background: #1a3a5c;
+            color: #fff;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #2a5a8c;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .logo span {
+            color: #6ab0f7;
+        }
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            font-size: 15px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            text-decoration: none;
+            border-bottom-color: #6ab0f7;
+        }
+        .nav-links .btn-nav {
+            background: #2a7de1;
+            padding: 6px 22px;
+            border-radius: 20px;
+            border-bottom: none;
+            font-weight: 500;
+        }
+        .nav-links .btn-nav:hover {
+            background: #4a9df1;
+            border-bottom: none;
+        }
+        .nav-links .active {
+            color: #fff;
+            border-bottom-color: #6ab0f7;
+        }
+
+        /* ======== 页面横幅（背景图片 + 模糊） ======== */
+        .page-banner {
+            position: relative;
+            padding: 60px 0 50px;
+            text-align: center;
+            color: #fff;
+            background-image: url('https://www.jingbang-tech.com/wp-content/uploads/2025/10/shaft-collar-9-768x1024.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+            z-index: 0;
+            border-bottom: 4px solid #2a7de1;
+        }
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            background-attachment: fixed;
+            filter: blur(6px);
+            transform: scale(1.05);
+            z-index: -1;
+        }
+        .page-banner .banner-content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        .page-banner h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+        .page-banner .subhead {
+            font-size: 17px;
+            color: rgba(255,255,255,0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ======== 主体 ======== */
+        .section {
+            padding: 50px 0;
+        }
+        .section-light {
+            background: #fff;
+        }
+        .section-title {
+            font-size: 28px;
+            color: #1a3a5c;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .section-sub {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 36px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ======== 联系信息卡片 ======== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .contact-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 22px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            border: 1px solid #eef2f6;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .contact-card:hover {
+            transform: translateY(-4px);
+        }
+        .contact-card .icon {
+            font-size: 36px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .contact-card h3 {
+            color: #1a3a5c;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+        .contact-card p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+        .contact-card a {
+            color: #1a73e8;
+            word-break: break-all;
+        }
+
+        /* ======== 信息区块 ======== */
+        .info-block {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px 36px;
+            border: 1px solid #eef2f6;
+            max-width: 800px;
+            margin: 0 auto 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px 40px;
+        }
+        .info-block .item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: #333;
+        }
+        .info-block .item .emoji {
+            font-size: 22px;
+        }
+        .info-block .item a {
+            color: #1a73e8;
+        }
+
+        /* ======== 底部 ======== */
+        .footer {
+            background: #0d2a44;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 30px 0;
+            border-top: 3px solid #1a73e8;
+        }
+        .footer a {
+            color: rgba(255,255,255,0.9);
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        /* ======== 响应式 ======== */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .page-banner h1 { font-size: 28px; }
+            .page-banner { padding: 40px 0 30px; }
+            .page-banner .banner-content { padding: 30px 16px; }
+            .section-title { font-size: 22px; }
+            .navbar .container { flex-direction: column; gap: 10px; }
+            .nav-links { justify-content: center; gap: 14px; }
+            .page-banner { background-attachment: scroll; }
+            .page-banner::before { background-attachment: scroll; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .info-block { flex-direction: column; align-items: center; padding: 24px 16px; gap: 14px; }
+            .info-block .item { font-size: 14px; }
+        }
+        @media (max-width: 480px) {
+            .page-banner h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- 导航 -->
+<!-- ============================================================ -->
+<nav class="navbar">
+    <div class="container">
+        <a href="/" class="logo">shaft<span>-collar</span></a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/types/">Types</a></li>
+            <li><a href="/materials/">Materials</a></li>
+            <li><a href="/resources/">Resources</a></li>
+            <li><a href="/contact/" class="btn-nav active">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ============================================================ -->
+<!-- 页面横幅 -->
+<!-- ============================================================ -->
+<section class="page-banner">
+    <div class="container">
+        <div class="banner-content">
+            <h1>Contact Us</h1>
+            <p class="subhead">Ready to discuss your shaft collar requirements? Reach out to our engineering team for a quote or technical consultation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 联系信息 -->
+<!-- ============================================================ -->
+<section class="section section-light">
+    <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-sub">We're here to help with your custom shaft collar needs, from design to delivery.</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <span class="icon">📍</span>
+                <h3>Head Office</h3>
+                <p>3E-7, Wanmao Building</p>
+                <p>Wuhou District, Chengdu, China</p>
+            </div>
+            <div class="contact-card">
+                <span class="icon">🏭</span>
+                <h3>Factory</h3>
+                <p>High-tech Zone Industrial Park</p>
+                <p>Suining, Sichuan, China</p>
+            </div>
+            <div class="contact-card">
+                <span class="icon">📧</span>
+                <h3>Email Us</h3>
+                <p><a href="mailto:abby@jingbang-tech.com">abby@jingbang-tech.com</a></p>
+                
+            </div>
+        </div>
+
+        <!-- 额外联系信息 -->
+        <div class="info-block">
+            <div class="item">
+                <span class="emoji">📞</span>
+                <span><strong>Phone:</strong> <a href="tel:+8618602821325">+86 186 0282 1325</a></span>
+            </div>
+            <div class="item">
+                <span class="emoji">🕐</span>
+                <span><strong>Working Hours:</strong> Mon – Fri, 9:00 AM – 6:00 PM (GMT+8)</span>
+            </div>
+            <div class="item">
+                <span class="emoji">🔧</span>
+                <span><strong>Quick Quote:</strong> Include bore size, material, quantity, and any special requirements.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 引流到主站 -->
+<!-- ============================================================ -->
+<section style="background: #1a3a5c; color: #fff; padding: 30px 0; text-align: center;">
+    <div class="container">
+        <p style="font-size: 15px; color: rgba(255,255,255,0.85);">
+            shaft-collar.com is a brand of <strong>JingBang Tech</strong> —
+            <a href="https://www.jingbang-tech.com/shaft-collar-manufacturers/" target="_blank" rel="noopener" style="color: #6ab0f7;">Visit our main site →</a>
+        </p>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 底部 -->
+<!-- ============================================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/types/">Types</a>
+            <a href="/materials/">Materials</a>
+            <a href="/resources/">Resources</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <p>© 2026 shaft-collar.com | Precision Shaft Collar Manufacturer</p>
+        <p style="font-size: 14px; margin-top: 4px;">
+            Email: <a href="mailto:abby@jingbang-tech.com">abby@jingbang-tech.com</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
